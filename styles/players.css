@@ -1,0 +1,125 @@
+.contentblocknonimage
+{
+	height: auto;
+}
+
+.contentblocktextnonimage
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#firstcontentblockimage.contentblockimage
+{
+	background-image: url("../source/play/1.jpg");
+}
+
+#secondcontentblockimage.contentblockimage
+{
+	background-image: url("../source/play/2.jpg");
+}
+
+#thirdcontentblockimage.contentblockimage
+{
+	background-image: url("../source/play/3.jpg");
+}
+
+.content
+{
+	background-color: OrangeRed;
+	border-radius: 5em;
+	overflow: hidden;
+	height: auto;
+	transition-duration: .5s;
+}
+
+.content:hover
+{
+	border-radius: 7em;
+	transition-duration: .5s;
+}
+
+.contentblock
+{
+	margin-top: 0;
+	margin-bottom: 0em;
+	opacity: 0;
+	display: none;
+	transition: opacity .5s;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+}
+
+.contentblock:hover
+{
+	border-radius: 0;
+}
+
+.contentblock[title]
+{
+	opacity: 1;
+	display: block;
+}
+
+.contentblock[title] .contentblocktext
+{
+	padding-bottom: 6em;
+}
+ 
+.contentblock[data-visibily]
+{
+	opacity: 1; 
+	display: block;
+	transition-duration: .5s;
+}
+
+.playersbutton
+{
+	background-color: OrangeRed;
+	color: #333;
+	width: 100%;
+	height: 2.5em;
+	font-size: 2em;
+	line-height: 2.5em;
+	border: none;
+	transition-duration: .5s;
+	outline: none;
+}
+
+.playersbutton:hover, .playersbutton:focus
+{
+	background-color: DarkOrange;
+	height: 3em;
+	line-height: 3em;
+}
+.playersbutton:active
+{
+	background-color: DarkOrange;
+}
+
+.playersbutton::before
+{
+	content: "▲";
+}
+.playersbutton[data-direction]::before
+{
+	content: "▼";
+}
+
+@media screen and (max-width: 1500px)
+{
+	.playersbutton
+	{
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 800px)
+{
+	.playersbutton
+	{
+		font-size: 1em;
+	}
+}

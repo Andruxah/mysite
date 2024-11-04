@@ -1,0 +1,10 @@
+.contentblock
+{
+	margin-top: 5%;
+	margin-bottom: 0;
+}
+
+.contentblock[page]
+{
+	margin-top: 15%;
+}
