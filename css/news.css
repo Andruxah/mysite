@@ -1,0 +1,135 @@
+.contentblocknewsimagesbutton
+{
+	display: block;
+	width: 1%;
+	height: 50%;
+	background-color: #3339;
+	border: none;
+	border-radius: 50px;
+	transition-duration: .5s;
+	position: absolute;
+	z-index: 2;
+	top: 25%;
+	cursor: pointer;
+}
+
+#next.contentblocknewsimagesbutton
+{
+	right: 1%;
+}
+
+#prev.contentblocknewsimagesbutton
+{
+	left: 1%;
+}
+
+.contentblocknewsimagesbutton:hover, .contentblocknewsimagesbutton:focus	
+{
+	height: 75%;
+	top: 12.5%;
+	outline: none;
+	background-color: #333D;
+	width: 3%;
+}
+
+.contentblocknewsimagesbutton:active
+{
+	background-color: #333;
+	transition-duration: .15s;
+}
+
+.contentblocknewsimages
+{
+	float: right;
+	display: inline-block;
+	background: #333 center;
+	background-size: 100% 100%;
+	width: calc(60vh * 16 / 9);
+	height: 100%;
+	position: relative;
+}
+
+.contentblockimagesconteiner
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.contentblockimagesconteiner li
+{
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	inset: 0;
+	transition-duration: .5s;
+}
+
+.contentblockimagesconteiner li[data-visible]
+{
+	opacity: 1;
+	inset: 0;
+	z-index: 1;
+}
+
+.contentblockimagesconteiner li img
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media screen and (max-aspect-ratio: 17/9)
+{
+	.contentblocknewsimages
+	{
+		float: top;
+		display: inline-block;
+		width: 100%;
+		height: calc(75vw * 9 / 16);
+		padding: 0;
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (max-width: 1100px)
+{
+	.contentblocknewsimages
+	{
+		float: top;
+		display: inline-block;
+		width: 100%;
+		height: calc(75vw * 9 / 16);
+		padding: 0;
+		margin-bottom: 0;
+	}
+}
+
+#firstcontentblockimage.contentblockimage
+{
+	background-image: url("../source/play/1.jpg");
+}
+
+#secondcontentblockimage.contentblockimage
+{
+	background-image: url("../source/play/2.jpg");
+}
+
+#thirdcontentblockimage.contentblockimage
+{
+	background-image: url("../source/play/3.jpg");
+}
+
+.contentblocknonimage
+{
+	height: auto;
+}
+
+.contentblocktextnonimage
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
