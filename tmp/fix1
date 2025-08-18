@@ -4010,9 +4010,9 @@
           })
 
           if (pixelBatch.length >= Math.floor(state.currentCharges)) {
-	debugger;
             let success = await sendPixelBatch(pixelBatch, regionX, regionY)
 
+	debugger;
             if (success === "token_error") {
                 if (CONFIG.AUTO_CAPTCHA_ENABLED) {
                     updateUI("captchaSolving", "warning");
