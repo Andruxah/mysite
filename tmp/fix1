@@ -3983,7 +3983,6 @@
           const alpha = pixels[idx + 3]
           
           if (alpha < CONFIG.TRANSPARENCY_THRESHOLD) continue
-          if (Utils.isWhitePixel(r, g, b)) continue
 
       // Step 1: Quantize source pixel to the user's selected palette (with white bias)
       let targetRgb;
