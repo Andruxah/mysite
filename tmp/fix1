@@ -4013,6 +4013,7 @@
             let success = await sendPixelBatch(pixelBatch, regionX, regionY)
 
             if (success === "token_error") {
+				state.stopFlag = true;
                 if (CONFIG.AUTO_CAPTCHA_ENABLED) {
                     updateUI("captchaSolving", "warning");
                     try {
@@ -4037,7 +4038,7 @@
                 }
             }
 
-            if (success) {
+            if (success and !(success === "token_error")) {
               pixelBatch.forEach((pixel) => {
                 state.paintedMap[pixel.localY][pixel.localX] = true
                 state.paintedPixels++
