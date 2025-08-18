@@ -4038,7 +4038,7 @@
                 }
             }
 
-            if (success and !(success === "token_error")) {
+            else if (success) {
               pixelBatch.forEach((pixel) => {
                 state.paintedMap[pixel.localY][pixel.localX] = true
                 state.paintedPixels++
