@@ -4013,7 +4013,6 @@
             let success = await sendPixelBatch(pixelBatch, regionX, regionY)
 
             if (success === "token_error") {
-				state.stopFlag = true;
                 if (CONFIG.AUTO_CAPTCHA_ENABLED) {
                     updateUI("captchaSolving", "warning");
                     try {
@@ -4038,7 +4037,7 @@
                 }
             }
 
-            else if (success) {
+            if (success) {
               pixelBatch.forEach((pixel) => {
                 state.paintedMap[pixel.localY][pixel.localX] = true
                 state.paintedPixels++
@@ -4158,6 +4157,15 @@
         let data = null
         try { data = await res.json() } catch (_) {}
         console.error("❌ 403 Forbidden. Turnstile token might be invalid or expired.")
+        // Reset token & create new promise to await fresh token
+        turnstileToken = null
+        tokenPromise = new Promise((resolve) => { _resolveToken = resolve })
+        return "token_error"
+      }
+      if (res.status === 400) {
+        let data = null
+        try { data = await res.json() } catch (_) {}
+        console.error("❌ 400 MY ERR")
         // Reset token & create new promise to await fresh token
         turnstileToken = null
         tokenPromise = new Promise((resolve) => { _resolveToken = resolve })
