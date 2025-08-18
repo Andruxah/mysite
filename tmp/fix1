@@ -4009,7 +4009,7 @@
             localY: y,
           })
 
-          if (pixelBatch.length >= 1 /*Math.floor(state.currentCharges)*/) {
+          if (pixelBatch.length >= Math.floor(state.currentCharges)) {
             let success = await sendPixelBatch(pixelBatch, regionX, regionY)
 
             if (success === "token_error") {
@@ -4144,8 +4144,6 @@
 
     try {
   const payload = { coords, colors, t: turnstileToken }
-  
-		console.error(JSON.stringify(payload));
 
       const res = await fetch(`https://backend.wplace.live/s0/pixel/${regionX}/${regionY}`, {
         method: "POST",
