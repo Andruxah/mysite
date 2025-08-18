@@ -3947,8 +3947,6 @@
   }
 
   async function processImage() {
-	//debug here	
-debugger;
     const { width, height, pixels } = state.imageData
     const { x: startX, y: startY } = state.startPosition
     const { x: regionX, y: regionY } = state.region
@@ -4012,6 +4010,7 @@ debugger;
           })
 
           if (pixelBatch.length >= Math.floor(state.currentCharges)) {
+	debugger;
             let success = await sendPixelBatch(pixelBatch, regionX, regionY)
 
             if (success === "token_error") {
