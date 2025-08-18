@@ -4090,7 +4090,6 @@
         }
       }
 
-	debugger;
       if (pixelBatch.length > 0 && !state.stopFlag) {
         const success = await sendPixelBatch(pixelBatch, regionX, regionY)
         if (success) {
