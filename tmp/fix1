@@ -1,4 +1,4 @@
-;(async () => {sdfsdfsdfgsdg
+;(async () => {
   // CONFIGURATION CONSTANTS
   const CONFIG = {
     COOLDOWN_DEFAULT: 31000,
