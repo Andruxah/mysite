@@ -4144,8 +4144,9 @@
 
     try {
   const payload = { coords, colors, t: turnstileToken }
-
-      const res = await fetch(`https://backend.wplace.live/s0/pixel/${regionX}/${regionY}`, {
+	  
+        console.error(body: JSON.stringify(payload));
+		const res = await fetch(`https://backend.wplace.live/s0/pixel/${regionX}/${regionY}`, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=UTF-8" },
         credentials: "include",
