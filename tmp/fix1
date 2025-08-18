@@ -3984,16 +3984,17 @@
           
           if (alpha < CONFIG.TRANSPARENCY_THRESHOLD) continue
 
-      // Step 1: Quantize source pixel to the user's selected palette (with white bias)
-      let targetRgb;
-      if (Utils.isWhitePixel(r, g, b)) {
-        // Force pure white for white-ish pixels to avoid drifting to yellowish tones
-        targetRgb = [255, 255, 255];
-      } else {
-        targetRgb = Utils.findClosestPaletteColor(r, g, b, state.activeColorPalette);
-      }
+		  // Step 1: Quantize source pixel to the user's selected palette (with white bias)
+		  // let targetRgb;
+		  // if (Utils.isWhitePixel(r, g, b)) {
+			// Force pure white for white-ish pixels to avoid drifting to yellowish tones
+			// targetRgb = [255, 255, 255];
+		  // } else {
+			// targetRgb = Utils.findClosestPaletteColor(r, g, b, state.activeColorPalette);
+		  // }
 
           // Step 2: Find the closest available in-game color to the quantized color
+		  const targetRgb = [r, g, b]
           const colorId = findClosestColor(targetRgb, state.availableColors);
 
           const pixelX = startX + x
