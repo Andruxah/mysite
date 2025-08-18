@@ -3947,7 +3947,8 @@
   }
 
   async function processImage() {
-	debugger;
+	//debug here	
+debugger;
     const { width, height, pixels } = state.imageData
     const { x: startX, y: startY } = state.startPosition
     const { x: regionX, y: regionY } = state.region
